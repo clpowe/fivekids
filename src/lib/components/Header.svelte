@@ -1,0 +1,42 @@
+<header>
+	<div class="container mx-auto header">
+		<div class="bar" />
+		<div>
+			<a href="/">
+				<h1 class="text-5xl font-bold">5 Kids and Planning</h1>
+			</a>
+			<p class="text-2xl">A blog about motherhood</p>
+		</div>
+		<div class="bar" />
+	</div>
+</header>
+
+<style>
+	header {
+		container-type: inline-size;
+		display: flex;
+		gap: var(--s1);
+		text-align: center;
+		margin-block: var(--s2);
+	}
+
+	.header {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.bar {
+		background-color: black;
+		height: 2px;
+		width: 100%;
+	}
+
+	@container (min-width: 75ch) {
+		.header {
+			display: grid;
+			grid-template-columns: 1fr auto 1fr;
+			align-items: center;
+			gap: var(--s1);
+		}
+	}
+</style>
