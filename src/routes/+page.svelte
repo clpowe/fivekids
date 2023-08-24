@@ -36,16 +36,24 @@
 </script>
 
 <div class="flex flex-col gap-8 md:flex-row">
-	<main>
-		{#each stories as story}
-			<BlogCard {...story} />
-		{/each}
-		{#if page > 1}
-			<button on:click={prev}>Previous</button>
-		{/if}
-		{#if lastpage >= page}
-			<button on:click={next}>Next</button>
-		{/if}
+	<main class="grid gap-10">
+		<div class="space-y-16">
+			{#if stories.length > 0}
+				{#each stories as story}
+					<BlogCard {...story} />
+				{/each}
+			{:else}
+				<h2>Oh No...</h2>
+			{/if}
+		</div>
+		<div class="mt-auto w-full flex mt-10">
+			{#if page > 1}
+				<button class="btn btn-secondary mr-auto" on:click={prev}>Previous</button>
+			{/if}
+			{#if lastpage >= page}
+				<button class="btn btn-secondary ml-auto" on:click={next}>Next</button>
+			{/if}
+		</div>
 	</main>
 	<aside class="max-w-full md:max-w-[28ch] space-y-4">
 		<article>
