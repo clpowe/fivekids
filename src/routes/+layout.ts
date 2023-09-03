@@ -52,7 +52,6 @@ export async function load() {
 	const recentPost: Post[] = posts.slice(0, 5);
 
 	return {
-		storyblokApi: storyblokApi,
 		stories: posts,
 		page,
 		lastpage,
