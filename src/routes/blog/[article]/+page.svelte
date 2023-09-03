@@ -11,6 +11,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{article?.title}</title>
+</svelte:head>
+
 <div class="max-w-[110ch] px-4 mx-auto sm:my-16 md:my-24">
 	<div class="flex flex-col gap-8 md:flex-row">
 		<main>

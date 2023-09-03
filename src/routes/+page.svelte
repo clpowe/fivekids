@@ -1,5 +1,9 @@
 <script lang="ts">
 	import BlogCard from '$lib/components/BlogCard.svelte';
+	import Logo from '$lib/assets/logo.svg';
+	import Planning from '$lib/assets/herotest.png';
+	import NavCard from '$lib/components/NavCard.svelte';
+
 	export let data;
 
 	let stories = data.stories;
@@ -33,8 +37,39 @@
 		});
 		stories = await res.json();
 	}
+
+	const pages = [
+		{
+			route: '/about',
+			name: 'About'
+		},
+		{
+			route: '/planning',
+			name: 'Planning'
+		},
+		{
+			route: '/kids',
+			name: 'Kids'
+		}
+	];
 </script>
 
+<svelte:head>
+	<title>5 Kids and Planning</title>
+</svelte:head>
+
+<div class="h-96 grid place-content-center hero to-transparent">
+	<img src={Logo} class="z-10 reletive" />
+</div>
+<section class="mb-20">
+	<nav>
+		<ul class="grid sm:grid-cols-3 gap-4">
+			{#each pages as page}
+				<NavCard {...page} />
+			{/each}
+		</ul>
+	</nav>
+</section>
 <div class="flex flex-col gap-8 md:flex-row">
 	<main class="grid gap-10">
 		<div class="space-y-16">
@@ -55,14 +90,13 @@
 			{/if}
 		</div>
 	</main>
-	<aside class="max-w-full md:max-w-[28ch] space-y-4">
+	<aside class="max-w-full sm:max-w-[24ch] space-y-4">
 		<article>
-			<h3 class="text-3xl font-bold">About</h3>
-			<p>
+			<h3 class="text-xl font-bold">About</h3>
+			<p class="uppercase font-bold">Ashley Powe</p>
+			<p class="text-sm font-sarif text-gray-700">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-				laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-				voluptate velit esse cillum dolore eu fugiat nulla pariatur....
+				labore et dolore magna aliqua.
 			</p>
 		</article>
 		<div>
@@ -76,3 +110,6 @@
 		</div>
 	</aside>
 </div>
+
+<style>
+</style>
