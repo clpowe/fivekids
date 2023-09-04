@@ -8,7 +8,7 @@ type Post = {
 	description: string;
 	slug: string;
 	tags?: string[];
-	content: string;
+	content: any;
 	mainImage: string;
 };
 
