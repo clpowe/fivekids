@@ -1,23 +1,22 @@
 <script lang="ts">
-	export const prerender = true;
-
 	import { renderRichText } from '@storyblok/svelte';
 	import SmallTitle from '$lib/components/SmallTitle.svelte';
 	import signiture from '$lib/assets/signiture.png';
-	import Logo from '$lib/assets/logo.svg';
+	import Logo2 from '$lib/assets/logo-two.svg';
 	import Ashley from '$lib/assets/Ashley.jpg';
 	import { error } from '@sveltejs/kit';
 	export let data;
 
 	let article = data.stories.find((story) => story.slug === data.article);
 
+	$: article = data.stories.find((story) => story.slug === data.article);
 	if (!article) {
 		throw error(404, {
 			message: 'Looks like you are lost'
 		});
 	}
 
-	let articleHTML = renderRichText(article.content);
+	$: articleHTML = renderRichText(article.content);
 </script>
 
 <svelte:head>
@@ -25,8 +24,8 @@
 </svelte:head>
 
 <div class="max-w-[110ch] px-4 mx-auto">
-	<div class="h-96 grid place-content-center hero to-transparent">
-		<img src={Logo} class="z-10 reletive" />
+	<div class="h-96 grid place-content-center">
+		<img src={Logo2} alt="" class="h-16" />
 	</div>
 	<div class="flex flex-col gap-8 md:flex-row">
 		<main>
@@ -69,7 +68,7 @@
 			</article>
 			<div>
 				<SmallTitle el="h3" title="latest post" />
-				<nav data-sveltekit-reload data-sveltekit-preload-code data-sveltekit-preload-data>
+				<nav>
 					<ul class="space-y-8 mt-8">
 						{#each data.recentPost as link}
 							<li class="grid grid-flow-col gap-2">
@@ -85,6 +84,7 @@
 									<a
 										href={`/blog/${link.slug}`}
 										class="text-md font-bold leading-tight line-clamp-2 mb-1"
+										data-sveltekit-preload-code
 										data-sveltekit-preload-data>{link.title}</a
 									>
 									<p class="text-sm text-gray-700 font-sarif">

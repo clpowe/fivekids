@@ -1,76 +1,29 @@
+<script>
+	import Logo2 from '$lib/assets/logo-two.svg';
+</script>
+
 <footer>
-	<div class="max-w-[110ch] mx-auto">
-		<div class="parent">
+	<div class="bg-white p8">
+		<div class="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
 			<div>
-				<h3>Follow Me</h3>
-				<nav>
-					<ul>
-						<li>
-							<a href="">Facebook</a>
-						</li>
-						<li>
-							<a href="">Instagram</a>
-						</li>
-						<li>
-							<a href="">Twitter</a>
-						</li>
-						<li>
-							<a href="">Threads</a>
-						</li>
-					</ul>
-				</nav>
+				<img src={Logo2} alt="" class="h-10" />
 			</div>
-			<div>
-				<form>
-					<h3>Newsletter Signup</h3>
-					<label for="Email">Enter your email</label>
-					<div class="input">
-						<input type="email" placeholder="Enter your email..." />
-						<button>Subscribe</button>
-					</div>
-				</form>
-			</div>
+			<form>
+				<h3>Newsletter Signup</h3>
+				<label for="Email">Enter your email</label>
+				<div class="input">
+					<input type="email" placeholder="Enter your email..." />
+					<button>Subscribe</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="bg-fuchsia-950">
+		<div class="max-w-4xl mx-auto text-white uppercase text-sm p4">
+			&copy; Ashley Cohen Powe {new Date().getFullYear()}
 		</div>
 	</div>
 </footer>
 
 <style>
-	.parent {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: start;
-		gap: var(--s1);
-	}
-
-	.parent > :first-child {
-		flex-basis: 300px;
-		flex-grow: 1;
-	}
-
-	.parent > :last-child {
-		flex-basis: 0;
-		flex-grow: 9999;
-		min-inline-size: 60%;
-	}
-
-	form {
-		max-width: var(--measure);
-	}
-	.input {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: start;
-		gap: var(--s1);
-	}
-
-	.input > :last-child {
-		flex-basis: 300px;
-		flex-grow: 1;
-	}
-
-	.input > :first-child {
-		flex-basis: 0;
-		flex-grow: 9999;
-		min-inline-size: 60%;
-	}
 </style>

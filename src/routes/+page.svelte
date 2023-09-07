@@ -2,7 +2,7 @@
 	import SmallTitle from '../lib/components/SmallTitle.svelte';
 
 	import BlogCard from '$lib/components/BlogCard.svelte';
-	import Logo from '$lib/assets/logo.svg';
+	import Logo2 from '$lib/assets/logo-two.svg';
 	import signiture from '$lib/assets/signiture.png';
 	import Ashley from '$lib/assets/Ashley.jpg';
 	import NavCard from '$lib/components/NavCard.svelte';
@@ -62,7 +62,7 @@
 </svelte:head>
 
 <div class="h-96 grid place-content-center hero to-transparent">
-	<img src={Logo} class="z-10 reletive" />
+	<img src={Logo2} alt="" class="h-16" />
 </div>
 <section class="mb-20">
 	<nav>
@@ -112,13 +112,20 @@
 			<ul class="space-y-8 mt-8">
 				{#each data.recentPost as link}
 					<li class="grid grid-flow-col gap-2">
-						<a href={`/blog/${link.slug}`} class="w-16 h-16">
+						<a
+							href={`/blog/${link.slug}`}
+							class="w-16 h-16"
+							data-sveltekit-preload-code
+							data-sveltekit-preload-data
+						>
 							<img src={link.image} alt="" class="w-16 h-16 object-cover" />
 						</a>
 						<div>
 							<a
 								href={`/blog/${link.slug}`}
-								class="text-md font-bold leading-tight line-clamp-2 mb-1">{link.title}</a
+								class="text-md font-bold leading-tight line-clamp-2 mb-1"
+								data-sveltekit-preload-code
+								data-sveltekit-preload-data>{link.title}</a
 							>
 							<p class="text-sm text-gray-700 font-sarif">
 								{new Date(link.date).toLocaleDateString('en-US', {

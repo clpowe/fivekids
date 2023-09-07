@@ -10,9 +10,9 @@
 <div class="">
 	<img height="600" width="600" src={image} alt="" class="w-full h-80 z-10" />
 	<div
-		class="relative space-y-2 bg-stone-100 p-8 w-10/12 mx-auto -mt-16 z-10 outline outline-stone-100 outline-offset-[1rem]"
+		class="relative space-y-2 bg-stone-100 p-8 w-9/10 md:w-10/12 mx-auto -mt-16 z-10 outline outline-stone-100 outline-offset-[1rem]"
 	>
-		<div class="space-y-4 mb-4">
+		<div class="space-y-4 mb-4 text-center">
 			<p class="text-fuchsia-950 font-sarif">Kids and Family</p>
 			<h2 class="text-3xl font-bold capitalize leading-snug">
 				{title}

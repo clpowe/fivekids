@@ -7,10 +7,17 @@
 </script>
 
 <svelte:head />
-<div class="bg-stone-100 font-sans">
+<div class="bg-neutral-100 font-sans parent">
 	<Header />
-	<div class="max-w-4xl px-4 mx-auto">
+	<div class="max-w-4xl px-4 mx-auto bg-neutral-100">
 		<slot />
 	</div>
 	<Footer />
 </div>
+
+<style>
+	.parent {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+	}
+</style>
