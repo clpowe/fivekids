@@ -9,11 +9,14 @@
 				<img src={Logo2} alt="" class="h-10" />
 			</div>
 			<form>
-				<h3>Newsletter Signup</h3>
-				<label for="Email">Enter your email</label>
-				<div class="input">
-					<input type="email" placeholder="Enter your email..." />
-					<button>Subscribe</button>
+				<label for="Email " class="font-sarif text-sm">Subscribe now to get daily updates.</label>
+				<div class="flex">
+					<input
+						class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+						type="email"
+						placeholder="Enter your email..."
+					/>
+					<button class="bg-fuchsia-950 text-white text-sm font-bold px-8">Subscribe</button>
 				</div>
 			</form>
 		</div>

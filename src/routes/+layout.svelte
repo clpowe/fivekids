@@ -9,8 +9,10 @@
 <svelte:head />
 <div class="bg-neutral-100 font-sans parent">
 	<Header />
-	<div class="max-w-4xl px-4 mx-auto bg-neutral-100">
-		<slot />
+	<div class="bg-neutral-100">
+		<div class="max-w-4xl px-4 mx-auto">
+			<slot />
+		</div>
 	</div>
 	<Footer />
 </div>
@@ -18,6 +20,8 @@
 <style>
 	.parent {
 		display: grid;
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: 1fr auto;
+
+		min-height: 100dvh;
 	}
 </style>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from '$app/environment';
 	import { onMount, onDestroy } from 'svelte';
 	import { animate, scroll } from 'motion';
 	import NavLink from './NavLink.svelte';
@@ -9,23 +10,10 @@
 	let menu_list: HTMLElement;
 	let head: HTMLElement;
 
-	let animates = false;
+	let animates = true;
 
 	function openMenu() {
 		animates = !animates;
-		// let hidden = menu_list.getAttribute('aria-hidden');
-		// let expanded;
-		// if (hidden == 'true') {
-		// 	animate = false;
-		// 	hidden = 'false';
-		// 	expanded = 'true';
-		// } else {
-		// 	animate = true;
-		// 	hidden = 'true';
-		// 	expanded = 'false';
-		// }
-		// menu_list.setAttribute('aria-hidden', hidden);
-		// menu_btn.setAttribute('aria-hidden', expanded);
 	}
 
 	const pages = [
@@ -50,12 +38,14 @@
 			name: 'Contact'
 		}
 	];
+
 	let routeId = $page.route.id;
+
 	onMount(() => {});
 
 	const scrollNavBar = 300;
 
-	onMount(() => {
+	if (browser) {
 		window.onscroll = () => {
 			if (window.scrollY > scrollNavBar) {
 				animate(head, { y: 0 });
@@ -63,16 +53,23 @@
 				animate(head, { y: -64 });
 			}
 		};
-	});
+		onDestroy(() => {
+			window.onscroll = () => {};
+		});
+	}
 
-	onDestroy(() => {
-		window.onscroll = () => {};
+	onMount(() => {
+		animate(head, { y: [-64, -64] });
 	});
 </script>
 
 <!-- <svelte:window on:scroll={scrollcontrol} /> -->
 
-<header class="bg-[#fafaf9] z-50 fixed t-0 w-full" bind:this={head}>
+<header
+	class="bg-[#fafaf9] z-50 fixed w-full"
+	bind:this={head}
+	style="transform: translateY(-64px)"
+>
 	<div class="h-16 grid place-content-center hero to-transparent">
 		<img src={Logo2} alt="" class="h-8" />
 	</div>
