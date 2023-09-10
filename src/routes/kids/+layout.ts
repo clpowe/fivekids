@@ -20,7 +20,7 @@ export async function load() {
 		version: 'published',
 		content_type: 'blogPost',
 		page: page,
-		with_tag: 'planning',
+		with_tag: 'kids',
 		per_page: 6
 	});
 

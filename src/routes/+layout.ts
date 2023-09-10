@@ -1,16 +1,5 @@
 import { apiPlugin, storyblokInit, useStoryblokApi } from '@storyblok/svelte';
-import type { Story } from '../Types/Blog';
-
-type Post = {
-	title: string;
-	date: Date;
-	image: string;
-	description: string;
-	slug: string;
-	tags?: string[];
-	content: any;
-	mainImage: string;
-};
+import type { Story, Post } from '../Types/Blog';
 
 type Auther = {};
 
