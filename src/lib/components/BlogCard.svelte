@@ -4,7 +4,7 @@
 	export let image: string;
 	export let description: string;
 	export let slug: string;
-	// export let tags: string[];
+	export let tags: string[];
 </script>
 
 <div class="">
