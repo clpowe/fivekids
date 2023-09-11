@@ -39,12 +39,9 @@ export async function load() {
 		};
 	});
 
-	const recentPost: Post[] = posts.slice(0, 5);
-
 	return {
 		stories: posts,
 		page,
-		lastpage,
-		recentPost
+		lastpage
 	};
 }
